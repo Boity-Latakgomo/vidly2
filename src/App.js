@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Movies from "./components/movies";
 import './App.css';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
   return (
     
 <main className="container">
-  <h1>React Rocks</h1>
+  <Movies/>
 </main>
   );
 }
