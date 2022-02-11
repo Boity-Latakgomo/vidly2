@@ -11,7 +11,15 @@ import { getMovies } from '../services/fakeMovieService';
               };
 
        render() { 
-           return <table className="table">
+           const { length: count } = this.state.movies;
+           if (count ===0) 
+           return <p>There are no movies in the database.</p>;
+
+           return (
+               <React.Fragment>
+
+        <p>Showing {count} movies in the database.</p>
+           <table className="table">
                <thead>
                    <tr>
                        <th>Title</th>
@@ -37,6 +45,11 @@ import { getMovies } from '../services/fakeMovieService';
                    
                </tbody>
            </table>
+
+
+               </React.Fragment>
+               
+        );
        }
    } 
     
