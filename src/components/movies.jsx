@@ -9,7 +9,7 @@ import { getMovies } from '../services/fakeMovieService';
            return <table className="table">
                <thead>
                    <tr>
-                       <th>Title</th>
+                       <th>My Title</th>
                        <th>Genre</th>
                        <th>Stock</th>
                        <th>Rate</th>
