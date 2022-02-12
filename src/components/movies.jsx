@@ -10,6 +10,13 @@ import { getMovies } from '../services/fakeMovieService';
                    const movies = this.state.movies.filter(m => m._id !== movie._id);
                    this.setState({ movies });
               };
+              handleLike = movie => {
+                 const movies = [...this.state.movies];
+                 const index = movies.indexOf(movie);
+                 movies[index] = { ...movies[index] };
+                 movies[index].liked = !movies[index].liked;
+                 this.setState({ movies });
+              };
 
        render() { 
            const { length: count } = this.state.movies;
@@ -40,7 +47,7 @@ import { getMovies } from '../services/fakeMovieService';
                      <td>{movie.numberInStock}</td>
                      <td>{movie.dailyRentalRate}</td>
                      <td>
-                         <Like/>
+                         <Like liked={movie.liked} onClick={() => this.handleLike(movie)}/>
                      </td>
                      <td>
                          <button onClick={() => this.handleDelete(movie)} className="btn btn-danger btn-sm">Delete</button>
