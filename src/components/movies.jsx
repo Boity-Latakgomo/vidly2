@@ -33,7 +33,7 @@ import { paginate } from "../utils/paginate";
                   this.setState({ currentPage : page });
               };
                  handleGenreSelect = genre => {
-                     console.log(genre);
+                     this.setState({ selectedGenre: genre});
                  };
 
        render() { 
@@ -49,7 +49,7 @@ import { paginate } from "../utils/paginate";
                 <div className="col-3">
                     <ListGroup
                      items={this.state.genres}
-                     
+                     selectedItem={this.state.selectedGenre}
                       onItemSelect={this.handleGenreSelect}
                       />
                 </div>
