@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TableHeader from "./common/tableHeader";
+import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
 const Table = (props) => {
@@ -8,7 +8,7 @@ const Table = (props) => {
     return (  <table className="table">
     <TableHeader
      columns={columns}
-      sortColumn={sortColumn}
+      sortColumn={sortColumns}
        onSort={onSort}
        />
 <TableBody columns={columns} data={data} />
